@@ -1,7 +1,7 @@
 {
   "bib_key": "Beau2026tp",
-  "web_url": "https://cosmochrony.org/science/spectral/program/temporal-projection/",
+  "web_url": "https://cosmochrony.org/science/temporal-projection/",
   "main_tex": "tex/temporal-projection.tex",
-  "zenodo_id": null,
-  "doi": null
+  "zenodo_id": 20316527,
+  "doi": "10.5281/zenodo.20316527"
 }
