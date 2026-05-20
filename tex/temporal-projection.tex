@@ -1,0 +1,563 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{doi}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Temporal Residual Map from the Completed Principal Symbol:\\
+Construction, Uniqueness, and the Lorentz Identification}
+\author{J\'er\^ome Beau\\
+\small Independent Researcher\\
+\small \texttt{jerome.beau@cosmochrony.org}}
+\date{2026}
+
+\begin{document}
+
+  \maketitle
+
+  \begin{abstract}
+    The note~\cite{Beau2026n} identifies the construction of a temporal residual
+    map~$\mathcal{P}_\tau^{\mathrm{Q5b}}$ as the remaining step needed to close the Lorentz
+    identification from O7 observables.
+    The present paper carries out this construction and proves that the map is the unique
+    positive function compatible with three inputs simultaneously:
+    the Lorentzian temporal splitting induced by the completed effective co-metric
+    $g^{\mu\nu} = 2\eta^{\mu\nu}$ of Q5b--Q11~\cite{Beau2026q5b,Beau2026q11},
+    the Born--Infeld unit capacity-flow sphere of~\cite{Beau2026c}, and
+    the exact Weil linear filling law $\Sigma_n^{\mathrm{tot}} = 1 - B_n$
+    of~\cite{Beau2026n}.
+
+    The completed principal symbol determines the Lorentzian temporal splitting of the
+    effective tangent bundle; it does not by itself define a non-linear action on the
+    scalar observable~$\Sigma_n^{\mathrm{tot}}$.
+    The Born--Infeld admissibility budget provides the canonical unit capacity-flow lift,
+    and the Weil filling law identifies the spatial component $B_n$.
+    Their composition defines the scalar temporal residual map
+    \[
+      \mathcal{P}_\tau^{\mathrm{Q5b}} \colon \Sigma_n^{\mathrm{tot}}
+      \;\longmapsto\; \sqrt{\Sigma_n^{\mathrm{tot}}\bigl(2 - \Sigma_n^{\mathrm{tot}}\bigr)}
+      \;=\; \sqrt{1 - B_n^2}.
+    \]
+    This map is not an idempotent projection on scalar observables; it is the scalar shadow
+    of a linear Lorentzian projection composed with the Born--Infeld lift.
+    The three inputs are individually necessary: removing any one of them leaves the
+    formula undetermined.
+    This necessity retroactively explains the numerical failure of all three candidate
+    maps tested in~\cite{Beau2026n}.
+    Lemma~1 of~\cite{Beau2026n} follows, and with it Theorem~1:
+    $\Phi(\eta_n^\tau) = (1+(\eta_n^\tau)^2)^{-1/2} \to 1/\gamma$.
+  \end{abstract}
+
+  \noindent\textbf{Keywords.}
+  temporal residual map, principal symbol, Born--Infeld admissibility, Lorentz factor,
+  capacity-flow bundle, uniqueness, Heisenberg group, sub-Riemannian geometry,
+  effective co-metric, Weil factorization, Cosmochrony.
+
+  \newpage
+  \tableofcontents
+
+  \newpage
+
+  \section{Introduction}
+
+    \subsection{Context and the open problem}
+
+      The Cosmochrony spectral geometry programme derives effective spacetime structure from
+      admissibility constraints on non-injective projections of spectral data on the Heisenberg
+      group $\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})$~\cite{Beau2026m}.
+      The paper Q5b~\cite{Beau2026q5b} constructs the effective operator
+      $L_{\mathrm{eff}} = -A_\tau\partial_\tau^2 + A_H\Delta_H$ on
+      $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$, extracts a Lorentzian co-metric from
+      its principal symbol, and leaves $A_\tau$ open.
+      Papers Q8~\cite{BeauQ8}, Q10~\cite{Beau2026q10}, and Q11~\cite{Beau2026q11} close this
+      gap by proving $A_z = A_H = A_\tau = 2$, yielding the completed effective co-metric
+      $g^{\mu\nu} = 2\eta^{\mu\nu}$ with no free parameter.
+
+      The note~\cite{Beau2026n} then studies the O7 saturation observable $\eta_n^{O7} =
+  B_n/\Sigma_n^{\mathrm{tot}}$ and asks whether it recovers the relativistic Lorentz factor
+      $\gamma$.
+      Two structural facts are established there:
+      \begin{enumerate}
+        \item The Weil factorization gives $\Sigma_n^{\mathrm{tot}} = 1 - B_n$ exactly in the
+        Schr\"odinger representation (Corollary~1 of~\cite{Beau2026n}).
+        \item A temporal residual projection $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is needed;
+        no natural BFS observable directly satisfies the quadratic law
+        $B_n^2 + (\Sigma_n^\tau)^2 = 1$.
+      \end{enumerate}
+      The note defines $\mathcal{P}_\tau^{\mathrm{Q5b}}$ implicitly via the completed
+      co-metric of Q5b and Q11, but defers its explicit construction as ``the remaining open
+      task'' (Section~6.3 of~\cite{Beau2026n}).
+
+    \subsection{What the present paper does}
+
+      We carry out this construction in full and prove that the resulting map is the
+      \emph{unique} positive function compatible with the Lorentzian splitting, the BI budget,
+      and the Weil filling law (Theorem~\ref{thm:main}).
+      The uniqueness is the core result: once the three inputs are specified, the formula is
+      forced.
+
+      As a by-product, the uniqueness proof explains why all three candidate maps
+      $\Sigma_n^A$, $\Sigma_n^B$, $\Sigma_n^C$ tested numerically in~\cite{Beau2026n} fail:
+      each violates exactly one of the three necessary inputs (Proposition~\ref{prop:failure}).
+
+    \subsection{Precise scope of each ingredient}\label{sec:scope}
+
+      The derivation rests on three distinct inputs.
+      Each is necessary; removing any one leaves the formula undetermined.
+      \begin{enumerate}
+        \item[(L)] \textbf{Lorentzian splitting} (from the completed principal symbol):
+        the co-metric $g^{\mu\nu} = 2\eta^{\mu\nu}$ determines a unique timelike direction
+        $\partial_\tau$ in $T(\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R}))$
+        and a corresponding linear projector~$P_\tau$ on vectors.
+        The principal symbol alone does not determine a scalar map on $\Sigma_n^{\mathrm{tot}}$.
+        \item[(BI)] \textbf{Born--Infeld capacity sphere} (from the BI admissibility
+        budget~\cite{Beau2026c}): the admissible capacity flow vector $\vec{F}_n$ lies on the
+        unit sphere $(F_n^\tau)^2 + |\vec{F}_n^{\,\mathrm{spat}}|^2 = 1$ (after normalisation).
+        This is the quadratic constraint that forces $F_n^\tau = \sqrt{1 - B_n^2}$ once $B_n$
+        is known.
+        \item[(W)] \textbf{Weil filling law} (from the Schr\"odinger factorization~\cite{Beau2026n}):
+        $\Sigma_n^{\mathrm{tot}} = 1 - B_n$ exactly, identifying the spatial component of $\vec{F}_n$
+        as $B_n = 1 - \Sigma_n^{\mathrm{tot}}$.
+      \end{enumerate}
+      The temporal residual map is the unique positive function $\psi\colon[0,1]\to[0,1]$
+      compatible with all three.
+
+    \subsection{Organisation}
+
+      Section~\ref{sec:setup} fixes notation and recalls the relevant results.
+      Section~\ref{sec:bundle} defines the capacity-flow bundle and the unit BI sphere.
+      Section~\ref{sec:construction} constructs $\mathcal{P}_\tau^{\mathrm{Q5b}}$ and proves
+      Theorem~\ref{thm:main}.
+      Section~\ref{sec:necessity} proves the necessity of each ingredient and explains the
+      failure of the three candidates of~\cite{Beau2026n}.
+      Section~\ref{sec:lorentz} derives the Lorentz identification.
+      Section~\ref{sec:status} gives the logical status table.
+
+  \section{Setup and Notation}\label{sec:setup}
+
+    \subsection{Objects in force}
+
+      Throughout, $q$ denotes a prime, $G_q = \mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})$,
+      and $d_w$ denotes the BFS word metric on $G_q$.
+      The O7 cumulative occupation observable at depth $n < q/2$ (proved exact
+      in~\cite{Beau2026n}) is
+      \begin{equation}\label{eq:Bn}
+        B_n \;:=\; \frac{2n^2+2n+1}{q^2}, \qquad n < q/2.
+      \end{equation}
+      This is the fraction of $(a,b)$ pairs in $({\mathbb{Z}/q\mathbb{Z}})^2$ satisfying
+      $\min(a,q{-}a)+\min(b,q{-}b)\leq n$, i.e.\ the normalised spatial footprint of the BFS
+      ball at depth~$n$.
+      It satisfies $B_0 = 1/q^2$, $B_n < 1/2$ for $n < q/2$, and is strictly monotone
+      in the pre-wrapping window $n < q/2$.
+      The formula~\eqref{eq:Bn} does not extend beyond $n = q/2$; the full saturation profile
+      on the finite torus involves wrapping corrections.
+      The O7 total residual frontier novelty is the exact complement (Corollary~1
+      of~\cite{Beau2026n}):
+      \begin{equation}\label{eq:Sigma}
+        \Sigma_n^{\mathrm{tot}} \;=\; 1 - B_n.
+      \end{equation}
+
+    \subsection{Completed co-metric and its inverse}\label{sec:cometric}
+
+      The effective operator on $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$ is
+      (Q5b Theorem~5.2~\cite{Beau2026q5b}):
+      \begin{equation}\label{eq:Leff}
+        L_{\mathrm{eff}} = -A_\tau\partial_\tau^2 + A_H\Delta_H,
+      \end{equation}
+      where $\Delta_H = \tilde{X}^2 + \tilde{Y}^2$ is the Kohn--Laplacian on $\mathrm{Heis}_3(\mathbb{R})$.
+      The principal symbol of $L_{\mathrm{eff}}$ at $(p,k)$ is:
+      \begin{equation}\label{eq:symbol}
+        \sigma_2(L_{\mathrm{eff}})(p,k)
+        = -A_\tau k_\tau^2 + A_H
+        \Bigl[\Bigl(k_x+\tfrac{y}{2}k_z\Bigr)^2+\Bigl(k_y-\tfrac{x}{2}k_z\Bigr)^2\Bigr].
+      \end{equation}
+      Following Q5b~\cite{Beau2026q5b} (equations~(17)--(19)), the effective \emph{co-metric
+  tensor} $g^{\mu\nu}$ is read off from the principal symbol by $\sigma_2(L_{\mathrm{eff}})(p,k)
+  = g^{\mu\nu}(p)k_\mu k_\nu$.
+      We denote by $g_{\mu\nu}$ its inverse metric tensor (used for lowering indices and
+      computing Lorentzian projections); these are related by $g^{\mu\rho}g_{\rho\nu}
+  = \delta^\mu_\nu$.
+
+      The following results are in force without further proof:
+      Q8~\cite{BeauQ8} gives $A_z = 2$;
+      Q10~\cite{Beau2026q10} gives $A_H = 2$ under~[U];
+      Q11~\cite{Beau2026q11} gives $A_\tau = 2$ under the Q5a hypotheses and~[U].
+      The completed effective co-metric is therefore
+      \begin{equation}\label{eq:metric}
+        g^{\mu\nu} = 2\eta^{\mu\nu}, \qquad
+        \eta = \mathrm{diag}(-1,+1,+1,+1),
+      \end{equation}
+      with no free parameter, and its inverse metric is
+      \begin{equation}\label{eq:invmetric}
+        g_{\mu\nu} = \tfrac{1}{2}\eta_{\mu\nu}.
+      \end{equation}
+      The temporal component satisfies $g_{\tau\tau} = -1/2 < 0$.
+      Formulae for Lorentzian projections in Section~\ref{sec:construction} use
+      $g_{\mu\nu}$~\eqref{eq:invmetric}.
+
+    \subsection{Born--Infeld admissibility budget}
+
+      The Born--Infeld admissibility constraint of~\cite{Beau2026c} bounds the total admissible
+      capacity increment per projective depth step $dn$:
+      \begin{equation}\label{eq:BI}
+        (dI_\tau)^2 + (dI_{\mathrm{spat}})^2 = c_{\mathrm{BI}}^2\,dn^2.
+      \end{equation}
+      After normalisation $c_{\mathrm{BI}} = 1$, the capacity flow vector $\vec{F}_n$
+      (Definition~\ref{def:BIsphere} below) lies on the unit Born--Infeld sphere.
+      This budget is a structural axiom of the Foundation~\cite{Beau2026m}; it is not
+      derived from the principal symbol.
+
+  \section{Capacity-Flow Bundle and Born--Infeld Sphere}\label{sec:bundle}
+
+    \subsection{The capacity flow vector}
+
+      In the large-$q$ continuum limit, the cascade depth $n$ is identified with the coordinate
+      $\tau$ on $\mathbb{R}_\tau$ (Q5b Remark~3.3~\cite{Beau2026q5b}, Q11 Lemma~3.1~\cite{Beau2026q11}).
+      The O7 observables become sections of a bundle over $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$.
+
+      \begin{definition}[Capacity flow vector and unit BI sphere]\label{def:BIsphere}
+        The \emph{capacity flow vector} at depth $n$ is
+        \[
+          \vec{F}_n := F_n^\tau\,\partial_\tau + \vec{F}_n^{\,\mathrm{spat}}
+          \;\in\; T_{(\tau,e)}(\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})),
+        \]
+        where $F_n^\tau = dI_\tau/dn$ and $|\vec{F}_n^{\,\mathrm{spat}}| = dI_{\mathrm{spat}}/dn$
+        are the normalised temporal and spatial capacity increments.
+        The BI budget~\eqref{eq:BI} places $\vec{F}_n$ on the \emph{unit Born--Infeld sphere}:
+        \begin{equation}\label{eq:BIsphere}
+          (F_n^\tau)^2 + |\vec{F}_n^{\,\mathrm{spat}}|^2 = 1.
+        \end{equation}
+      \end{definition}
+
+    \subsection{Identification of the spatial component}
+
+      The O7 observable $B_n$ is the normalised spatial coverage of the BFS cascade.
+      By the Q5b Carnot--Carath\'eodory convergence (Theorem~3.2 of~\cite{Beau2026q5b}),
+      in the large-$q$ limit $B_n$ coincides with the fraction of spatial capacity occupied by
+      the BFS ball, i.e.\ the magnitude of the spatial component of the normalised capacity
+      flow:
+      \begin{equation}\label{eq:spatial}
+        B_n = |\vec{F}_n^{\,\mathrm{spat}}|.
+      \end{equation}
+      Substituting~\eqref{eq:spatial} into the unit BI sphere~\eqref{eq:BIsphere} gives
+      \begin{equation}\label{eq:Ftau}
+        F_n^\tau = \sqrt{1 - B_n^2}.
+      \end{equation}
+
+  \section{Construction and Uniqueness of $\mathcal{P}_\tau^{\mathrm{Q5b}}$}
+    \label{sec:construction}
+
+    \subsection{The linear Lorentzian projector on vectors}
+
+      The completed co-metric~\eqref{eq:metric} endows $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$
+      with a Lorentzian structure.
+      The associated \emph{temporal projector} on tangent vectors is the standard Lorentzian
+      orthogonal projection onto the timelike direction $\partial_\tau$:
+      \begin{equation}\label{eq:Ptau-vector}
+        P_\tau V := \frac{g(V,\partial_\tau)}{g(\partial_\tau,\partial_\tau)}\,\partial_\tau
+        = \frac{g_{\tau\mu}V^\mu}{g_{\tau\tau}}\,\partial_\tau
+        = V^\tau\,\partial_\tau,
+      \end{equation}
+      using $g_{\tau\tau} = -1/2$ from~\eqref{eq:invmetric} and $g_{\tau\mu}V^\mu = -V^\tau/2$.
+      The map $V \mapsto P_\tau V = V^\tau\partial_\tau$ is \emph{linear and idempotent}
+      on $T(\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R}))$.
+
+      \begin{remark}[Scope of the linear projector]\label{rem:scope}
+        The principal symbol determines $P_\tau$ via the co-metric~\eqref{eq:metric}.
+        It does not, however, determine a map on the scalar observable
+        $\Sigma_n^{\mathrm{tot}} \in [0,1]$: $P_\tau$ acts on tangent vectors, not on
+        real-valued capacity sections.
+        The lift from scalars to vectors is provided by the BI bundle structure
+        (Definition~\ref{def:BIsphere}), not by the principal symbol.
+      \end{remark}
+
+    \subsection{The scalar temporal residual map}
+
+      \begin{definition}[Temporal residual map]\label{def:Ptau}
+        The \emph{temporal residual map} $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is the composition:
+        \[
+          \mathcal{P}_\tau^{\mathrm{Q5b}} \colon
+          \Sigma_n^{\mathrm{tot}}
+          \xrightarrow{\;\text{BI lift}\;}
+          \vec{F}_n
+          \xrightarrow{\;P_\tau\;}
+          F_n^\tau\,\partial_\tau
+          \xrightarrow{\;\text{magnitude}\;}
+          |F_n^\tau|.
+        \]
+        Explicitly, $\mathcal{P}_\tau^{\mathrm{Q5b}}(\Sigma_n^{\mathrm{tot}}) := |F_n^\tau|$,
+        where $F_n^\tau$ is the temporal component of the capacity flow vector
+        (Definition~\ref{def:BIsphere}).
+      \end{definition}
+
+      \begin{remark}[Non-idempotence]\label{rem:nonidempotent}
+        The map $\mathcal{P}_\tau^{\mathrm{Q5b}}\colon[0,1]\to[0,1]$ is \emph{not} idempotent:
+        $(\mathcal{P}_\tau^{\mathrm{Q5b}})^2 \neq \mathcal{P}_\tau^{\mathrm{Q5b}}$ in general.
+        It is not an algebraic projection on a space of scalar observables.
+        The name ``temporal residual map'' is preferred over ``projector'' for
+        the scalar action; the underlying linear map $P_\tau$ on tangent vectors is an
+        orthogonal projector.
+      \end{remark}
+
+      \begin{remark}[Central direction]\label{rem:central}
+        As noted in~\cite{Beau2026n} (Section~5.3), $\mathcal{P}_\tau^{\mathrm{Q5b}}$ does not act
+        on the Schr\"odinger representation space $\mathbb{C}^q$.
+        The central direction $\tilde{Z} = \partial_z$ of $\mathrm{Heis}_3(\mathbb{R})$ becomes the
+        temporal direction only after the symbol completion chain
+        $\text{CC structure}\to\text{sub-principal correction (Q8)}\to\text{Q11 closure}
+        \to g^{\mu\nu} = 2\eta^{\mu\nu}$.
+        The map $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is defined at the level of the completed
+        geometry on $\mathbb{R}_\tau\times\mathrm{Heis}_3(\mathbb{R})$, not at the level of
+        the Weil representation.
+      \end{remark}
+
+    \subsection{Main theorem: explicit formula and uniqueness}
+
+      \begin{theorem}[BI-lifted temporal residual map]\label{thm:main}
+        Assume the Q5a continuum hypotheses~\cite{Beau2026q5a}
+        \textup{[H1]}, \textup{[H-w]}, \textup{[H-E1]}, \textup{[C]},
+        the spectral universality hypothesis~\textup{[U]} proved in U1~\cite{Beau2026u1},
+        and the canonical BI capacity-flow lift of Definition~\ref{def:BIsphere}.
+        The temporal residual map $\mathcal{P}_\tau^{\mathrm{Q5b}}$ acts on the O7 total
+        residual~$\Sigma_n^{\mathrm{tot}} \in [0,1]$ by
+        \begin{equation}\label{eq:Ptau-scalar}
+          \mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}
+          \;=\; \sqrt{\Sigma_n^{\mathrm{tot}}\bigl(2-\Sigma_n^{\mathrm{tot}}\bigr)}
+          \;=\; \sqrt{1-B_n^2}.
+        \end{equation}
+        Consequently, the quadratic law
+        \begin{equation}\label{eq:quadratic}
+          B_n^2 \;+\; \bigl(\mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}\bigr)^2 \;=\; 1
+        \end{equation}
+        holds exactly for all $n < q/2$.
+
+        Moreover, $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is the \emph{unique} map
+        $\psi\colon[0,1]\to[0,1]$ satisfying simultaneously:
+        \begin{itemize}
+          \item[\textup{(L)}] $\psi(\Sigma_n^{\mathrm{tot}}) = |P_\tau \vec{F}_n|$ (Lorentzian
+          projection of the capacity flow);
+          \item[\textup{(BI)}] $B_n^2 + \psi(\Sigma_n^{\mathrm{tot}})^2 = 1$
+          (unit BI sphere~\eqref{eq:BIsphere});
+          \item[\textup{(W)}] $\Sigma_n^{\mathrm{tot}} = 1 - B_n$ (Weil filling law~\eqref{eq:Sigma}).
+        \end{itemize}
+      \end{theorem}
+
+      \begin{proof}
+        \textbf{Explicit formula.}
+        By the Weil filling law~\eqref{eq:Sigma}: $B_n = 1 - \Sigma_n^{\mathrm{tot}}$.
+        By the spatial identification~\eqref{eq:spatial} and the unit BI sphere~\eqref{eq:BIsphere}:
+        \[
+          (F_n^\tau)^2 = 1 - B_n^2 = 1 - (1-\Sigma_n^{\mathrm{tot}})^2
+          = \Sigma_n^{\mathrm{tot}}(2 - \Sigma_n^{\mathrm{tot}}).
+        \]
+        By Definition~\ref{def:Ptau}: $\mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}
+        = |F_n^\tau| = \sqrt{\Sigma_n^{\mathrm{tot}}(2-\Sigma_n^{\mathrm{tot}})}$.
+        Equation~\eqref{eq:quadratic} follows immediately: $B_n^2 + (1-B_n^2) = 1$.
+        This identity is exact for all $n < q/2$.
+
+        \textbf{Uniqueness.}
+        Let $\psi\colon[0,1]\to[0,1]$ satisfy (L), (BI), and (W) simultaneously.
+        By (W): $B_n = 1 - f$ where $f = \Sigma_n^{\mathrm{tot}}$.
+        Substituting into (BI): $(1-f)^2 + \psi(f)^2 = 1$, hence
+        $\psi(f)^2 = 1 - (1-f)^2 = f(2-f)$.
+        The unique positive branch is $\psi(f) = \sqrt{f(2-f)}$.
+        No other positive function satisfies all three conditions.
+      \end{proof}
+
+      \begin{remark}[Derivation chain]\label{rem:chain}
+        The three conditions (L), (BI), (W) are jointly necessary and sufficient.
+        The Lorentzian splitting (L) specifies \emph{which} component of $\vec{F}_n$ is temporal
+        (the $\partial_\tau$ direction, with negative $g$-norm).
+        The BI sphere (BI) fixes the normalization of $\vec{F}_n$ to unity,
+        forcing $(F_n^\tau)^2 = 1 - B_n^2$ once $B_n$ is known.
+        The Weil filling law (W) provides the identification $B_n = 1 - \Sigma_n^{\mathrm{tot}}$,
+        converting the formula to a function of the observable alone.
+        Dropping any one of these three leaves the formula undetermined.
+      \end{remark}
+
+  \section{Necessity of Each Ingredient}\label{sec:necessity}
+
+    \subsection{What fails without each ingredient}
+
+      \begin{proposition}[Necessity]\label{prop:necessity}
+        Each of conditions \textup{(L)}, \textup{(BI)}, \textup{(W)} is individually
+        necessary for the uniqueness in Theorem~\ref{thm:main}.
+        \begin{itemize}
+          \item Without \textup{(L)}: the temporal component of $\vec{F}_n$ is unspecified;
+          any component of $\vec{F}_n$ could play the role of $\Sigma_n^\tau$.
+          \item Without \textup{(BI)}: the capacity flow vector is not constrained to the unit
+          sphere; $(F_n^\tau)^2 + B_n^2$ can take any value in $(0,\infty)$, and the quadratic
+          law~\eqref{eq:quadratic} need not hold.
+          \item Without \textup{(W)}: the spatial component $B_n$ is not identified with
+          $1-\Sigma_n^{\mathrm{tot}}$; the formula for $F_n^\tau$ as a function of
+          $\Sigma_n^{\mathrm{tot}}$ alone is then inaccessible.
+        \end{itemize}
+      \end{proposition}
+
+      \begin{proof}
+        Direct: each condition is used exactly once in the proof of Theorem~\ref{thm:main}.
+        Without (L), the map $V \mapsto P_\tau V$ is undefined, so Definition~\ref{def:Ptau}
+        has no content.
+        Without (BI), equation~\eqref{eq:BIsphere} does not hold, and $|F_n^\tau|$ cannot be
+        expressed in terms of $B_n$ alone.
+        Without (W), the substitution $B_n = 1 - \Sigma_n^{\mathrm{tot}}$ is unavailable,
+        and $\psi$ cannot be expressed as a function of $\Sigma_n^{\mathrm{tot}}$ alone.
+      \end{proof}
+
+    \subsection{Retroactive explanation of the candidate failures}\label{sec:candidates}
+
+      The note~\cite{Beau2026n} (Section~6) tests three candidate maps
+      $\Sigma_n^A$, $\Sigma_n^B$, $\Sigma_n^C$ and finds that all fail the quadratic
+      law $B_n^2 + (\Sigma_n^X)^2 \to 1$ with mean deviations of $45\%$, $13\%$, and $7\%$
+      respectively.
+      Proposition~\ref{prop:necessity} now gives the structural reason.
+
+      \begin{proposition}[Failure modes]\label{prop:failure}
+        The three candidate maps of~\cite{Beau2026n} fail the quadratic law because each
+        violates exactly one of conditions~\textup{(L)}, \textup{(BI)}, \textup{(W)}.
+        \begin{enumerate}
+          \item $\Sigma_n^A = 1 - |{c : \exists(a,b),\,(a,b,c)\in\bigcup_{k\leq n} S_k}|/q$
+          (central-coordinate coverage): fails \textup{(W)}.
+          The central variable $c$ is not the complement of $B_n$; it saturates at depth
+          $n\approx q/2$ while $B_n \approx 1/2$, so $\Sigma_n^A \neq 1 - B_n$.
+          This observable measures central BFS coverage, a distinct quantity from the total
+          Weil residual.
+          \item $\Sigma_n^B = \sqrt{1-B_n}$ (square-root complement): fails \textup{(BI)}.
+          It satisfies $B_n + (\Sigma_n^B)^2 = 1$ but not $B_n^2 + (\Sigma_n^B)^2 = 1$.
+          This is the identity arising from a linear budget $B_n + \Sigma = 1$ with $\Sigma$
+          quadratically normalized, not from the BI sphere.
+          \item $\Sigma_n^C = \sqrt{1-\beta_n^2}$ with $\beta_n = n/n_{\max}$ (depth proxy):
+          fails \textup{(W)}.
+          The normalised depth $\beta_n = n/n_{\max}$ is not equal to $B_n = (2n^2+2n+1)/q^2$
+          (they differ by a quadratic-vs-linear discrepancy in $n$), so the Weil identification
+          $B_n = 1 - \Sigma_n^{\mathrm{tot}}$ is not satisfied for $\Sigma_n^C$.
+        \end{enumerate}
+      \end{proposition}
+
+      \begin{proof}
+        For $\Sigma_n^A$: the Weil factorization proves $\Sigma_n^{\mathrm{tot}} = 1 - B_n$
+        exactly (\cite{Beau2026n} Corollary~1), but $\Sigma_n^A$ measures the distinct
+        observable of central-coordinate BFS coverage, which is not equal to $1-B_n$ in the
+        mid-range of the cascade.
+        For $\Sigma_n^B$: $B_n + (\sqrt{1-B_n})^2 = B_n + 1 - B_n = 1$, confirming it satisfies
+        the \emph{linear} complement law, not the BI sphere $B_n^2 + (\Sigma_n^B)^2 = 1$.
+        For $\Sigma_n^C$: $\beta_n = n/n_{\max}$ while $B_n = (2n^2+2n+1)/q^2$; these satisfy
+        $B_n \approx \beta_n^2 \cdot n_{\max}^2/q^2$, a different quadratic relationship, so
+        (W) fails for $\Sigma_n^C$.
+      \end{proof}
+
+      \begin{remark}[Informational content]\label{rem:info}
+        The failure of $\Sigma_n^C$ by only $7\%$ is now explained: $\beta_n \approx B_n^{1/2}$
+        at intermediate depths (since $B_n \propto n^2/q^2$), so $\Sigma_n^C = \sqrt{1-\beta_n^2}
+        \approx \sqrt{1-B_n}$, which is close to $\sqrt{1-B_n^2}$ when $B_n$ is small but
+        diverges for $B_n \to 1$, consistent with the reported residuals near $\beta_n \approx 0.8$.
+      \end{remark}
+
+  \section{The Lorentz Identification}\label{sec:lorentz}
+
+    Theorem~\ref{thm:main} proves Lemma~1 of~\cite{Beau2026n}.
+    Theorem~1 of~\cite{Beau2026n} then applies.
+
+    \begin{corollary}[Lorentz factor]\label{cor:lorentz}
+      Under the hypotheses of Theorem~\ref{thm:main}, the temporally projected saturation ratio
+      \[
+        \eta_n^\tau := \frac{B_n}{\mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}}
+        = \frac{B_n}{\sqrt{1-B_n^2}} = \beta\gamma,
+      \]
+      where $\beta := B_n$ is the normalised spatial mobility and $\gamma = (1-\beta^2)^{-1/2}$
+      is the Lorentz factor.
+      Consequently,
+      \[
+        \Phi(\eta_n^\tau) := \bigl(1 + (\eta_n^\tau)^2\bigr)^{-1/2} = \frac{1}{\gamma}.
+      \]
+    \end{corollary}
+
+    \begin{proof}
+      Direct from $\mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}} = \sqrt{1-B_n^2}$
+      and the definition of $\gamma$.
+    \end{proof}
+
+    \begin{remark}[Physical content]\label{rem:physics}
+      Corollary~\ref{cor:lorentz} gives:
+      (i) \emph{time dilation}: $d\tau/dn = 1/\gamma$;
+      (ii) \emph{light cone}: $B_n = 1$ forces $F_n^\tau = 0$, i.e.\ no temporal residual at $v = c$.
+      Length contraction requires the reconstruction of effective Lorentz transformations between
+      inertial observers and is deferred to future work (LC-O1 in Section~\ref{sec:status}).
+    \end{remark}
+
+  \section{Logical Status}\label{sec:status}
+
+    \subsection{Status table}
+
+      The table below lists the status of every ingredient.
+
+      \smallskip
+      \begin{center}
+        \renewcommand{\arraystretch}{1.2}
+        \begin{tabular}{lll}
+          \hline
+          Label & Content & Status \\
+          \hline
+          \cite{Beau2026n} Cor.~1 & $\Sigma_n^{\mathrm{tot}} = 1-B_n$ exact &
+          Proved (Weil factorization) \\
+          Q5b Thm.~5.2~\cite{Beau2026q5b} & $L_{\mathrm{eff}}$ and principal symbol &
+          Proved (Q9~\cite{Beau2026q9} + Q5a) \\
+          Q8~\cite{BeauQ8} & $A_z = 2$ &
+          Proved (Casimir rigidity) \\
+          Q10~\cite{Beau2026q10} & $A_H = 2$ &
+          Proved (conditional on [U]) \\
+          Q11~\cite{Beau2026q11} & $A_\tau = 2$, $g^{\mu\nu} = 2\eta^{\mu\nu}$ &
+          Proved (conditional on [U]) \\
+          BI budget~\eqref{eq:BI}~\cite{Beau2026c} & Unit BI sphere &
+          Structural (Foundation~\cite{Beau2026m}) \\
+          Definition~\ref{def:BIsphere} & Capacity flow vector $\vec{F}_n$ &
+          Structural (this paper) \\
+          Theorem~\ref{thm:main} & Formula and uniqueness &
+          Proved (conditional on [U] + BI lift) \\
+          Corollary~\ref{cor:lorentz} & $\Phi(\eta_n^\tau) = 1/\gamma$ &
+          Proved (conditional on [U] + BI lift) \\
+          \hline
+        \end{tabular}
+      \end{center}
+
+      \medskip
+      The sole analytic conditional is hypothesis~[U], proved in U1~\cite{Beau2026u1} under
+      the Q5a hypotheses.
+      The BI lift (Definition~\ref{def:BIsphere}) is structural: it uses the BI budget
+      axiom~\cite{Beau2026c,Beau2026m} and the Q5b spatial identification.
+
+    \subsection{Open problems}
+
+      \paragraph{LC-O1 (Length contraction).}
+        Corollary~\ref{cor:lorentz} establishes time dilation and the light cone.
+        Length contraction requires the reconstruction of effective Lorentz transformations from
+        the projective temporal ordering data~\cite{Beau2026pto}.
+
+      \paragraph{LC-O2 (General-relativistic extension).}
+        The present result is the flat-space (homogeneous) case.
+        In non-uniform regimes, position-dependent modifications of the local spectral budget
+        encode gravitational time dilation (Remark~2 of~\cite{Beau2026n}).
+
+      \paragraph{LC-O3 (Finite-$q$ corrections at saturation).}
+        The quadratic law~\eqref{eq:quadratic} is exact for $n < q/2$.
+        The behaviour near saturation ($n \approx q/2$) and torus-wrapping corrections are open.
+
+  \section*{Acknowledgements}
+
+  The author acknowledges the use of large language models as a supportive tool for refining
+  language, structure, and internal consistency during the development of this manuscript.
+
+  \newpage
+
+  \bibliographystyle{plain}
+  \bibliography{cosmochrony-bibliography}
+
+\end{document}
