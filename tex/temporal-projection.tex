@@ -12,6 +12,8 @@
 \newtheorem{definition}[theorem]{Definition}
 \newtheorem{remark}[theorem]{Remark}
 
+\newcommand{\Sym}{\mathrm{Sym}}
+
 \title{Temporal Residual Map from the Completed Principal Symbol:\\
 Construction, Uniqueness, and the Lorentz Identification}
 \author{J\'er\^ome Beau\\
@@ -489,8 +491,8 @@ Construction, Uniqueness, and the Lorentz Identification}
       Corollary~\ref{cor:lorentz} gives:
       (i) \emph{time dilation}: $d\tau/dn = 1/\gamma$;
       (ii) \emph{light cone}: $B_n = 1$ forces $F_n^\tau = 0$, i.e.\ no temporal residual at $v = c$.
-      Length contraction requires the reconstruction of effective Lorentz transformations between
-      inertial observers and is deferred to future work (LC-O1 in Section~\ref{sec:status}).
+      Length contraction and the reconstruction of effective Lorentz transformations between
+      inertial observers are addressed in~\cite{Beau2026lco1}.
     \end{remark}
 
   \section{Logical Status}\label{sec:status}
@@ -534,21 +536,35 @@ Construction, Uniqueness, and the Lorentz Identification}
       The BI lift (Definition~\ref{def:BIsphere}) is structural: it uses the BI budget
       axiom~\cite{Beau2026c,Beau2026m} and the Q5b spatial identification.
 
-    \subsection{Open problems}
+    \subsection{Closures of LC-O1--O3}
 
       \paragraph{LC-O1 (Length contraction).}
-        Corollary~\ref{cor:lorentz} establishes time dilation and the light cone.
-        Length contraction requires the reconstruction of effective Lorentz transformations from
-        the projective temporal ordering data~\cite{Beau2026pto}.
+        Effective Lorentz transformations between inertial observers are reconstructed
+        in~\cite{Beau2026lco1}.
+        The Born--Infeld capacity sphere supplies the load $\beta$ and the residual
+        $F^\tau = 1/\gamma$, while the Q5b--Q11 metric closure supplies the Lorentzian
+        interval whose isometries are the Lorentz group.
+        Length contraction follows as the reciprocal spatial projection onto the
+        simultaneity hyperplane of the moving splitting.
 
-      \paragraph{LC-O2 (General-relativistic extension).}
-        The present result is the flat-space (homogeneous) case.
-        In non-uniform regimes, position-dependent modifications of the local spectral budget
-        encode gravitational time dilation (Remark~2 of~\cite{Beau2026n}).
+      \paragraph{LC-O2-O1 (Capacity--metric bridge).}
+        The equivalence $R(x)^2 = 1-\epsilon(x) = -2g^{\tau\tau}(x)$, postulated in
+        Remark~3.2 of~\cite{Beau2026lco2}, is established in~\cite{Beau2026lco2o1}.
+        The identity follows from local admissibility-weight reduction on $\Sym^2(V_\rho)$,
+        without using the Einstein equation.
 
       \paragraph{LC-O3 (Finite-$q$ corrections at saturation).}
-        The quadratic law~\eqref{eq:quadratic} is exact for $n < q/2$.
-        The behaviour near saturation ($n \approx q/2$) and torus-wrapping corrections are open.
+        Finite-$q$ corrections near saturation are analysed in~\cite{Beau2026lco3}.
+        The quadratic identity $B_n^2 + (F^\tau_n)^2 = 1$ is exact for every $n$ with
+        the exact torus load.
+        The corrections affect the parabolic Carnot identification
+        $B_n^{\mathrm{parab}} = (2n^2+2n+1)/q^2$, not the capacity identity itself:
+        for $n = R+m$,
+        \[
+          B_n^{\mathrm{torus}} = B_n^{\mathrm{parab}} - \frac{4m^2}{q^2}.
+        \]
+        The parabolic identification is exact for $n \leq R := (q-1)/2$ and
+        asymptotically exact for $n = R + o(q)$.
 
   \section*{Acknowledgements}
 
