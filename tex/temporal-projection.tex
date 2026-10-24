@@ -31,12 +31,15 @@ Construction, Uniqueness, and the Lorentz Identification}
     identification from O7 observables.
     The present paper carries out this construction and proves that the map is the unique
     positive function compatible with three inputs simultaneously:
-    the Lorentzian temporal splitting induced by the completed effective co-metric
-    $g^{\mu\nu} = 2\eta^{\mu\nu}$ of Q5b--Q11,
+    the Lorentzian temporal splitting of a supplied rank-four co-metric of the conditional form of Q11,
+    $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ with $A_\tau$ and $\lambda$ independent and fixed by no
+    source,
     the Born--Infeld unit capacity-flow sphere (the quadratic budget hypothesis expressing
     the Born--Infeld capacity bound), and
     the exact Weil linear filling law $\Sigma_n^{\mathrm{tot}} = 1 - B_n$
     established in LorCap.
+    The splitting uses only the signature of that co-metric and the absence of mixed temporal--spatial terms;
+    no coefficient value enters, and the normalisation $g^{\mu\nu} = 2\eta^{\mu\nu}$ is a choice of units.
 
     The completed principal symbol determines the Lorentzian temporal splitting of the
     effective tangent bundle; it does not by itself define a non-linear action on the
@@ -57,6 +60,10 @@ Construction, Uniqueness, and the Lorentz Identification}
     maps tested in LorCap.
     LorCap Lemma~1 follows, and with it LorCap Theorem~1:
     $\Phi(\eta_n^\tau) = (1+(\eta_n^\tau)^2)^{-1/2} \to 1/\gamma$.
+    Reading the normalised load as the velocity parameter of an observer of the co-metric requires a further
+    hypothesis, [H-cone]: the light-cone speed of the co-metric equals the Born--Infeld bound per ordering step.
+    This is the coupling datum between temporal and spatial normalisations that Q11 leaves open; it is not derived
+    here.
     \textbf{Interpretive reading.}
     The Lorentz factor is thereby read as the reciprocal temporal residual of a bounded
     capacity-flow split, conditional on the Born--Infeld lift.
@@ -79,13 +86,17 @@ Construction, Uniqueness, and the Lorentz Identification}
       The Cosmochrony spectral geometry programme derives effective spacetime structure from
       admissibility constraints on non-injective projections of spectral data on the Heisenberg
       group $\mathrm{Heis}_3(\mathbb{Z}/q\mathbb{Z})$~\cite{Beau2026m}.
-      The paper Q5b~\cite{Beau2026q5b} constructs the effective operator
+      Under the spatial-limit hypothesis [H-L] and the lifting hypothesis [H-lift], the paper
+      Q5b~\cite{Beau2026q5b} obtains the effective operator
       $L_{\mathrm{eff}} = -A_\tau\partial_\tau^2 + A_H\Delta_H$ on
-      $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$, extracts a Lorentzian co-metric from
-      its principal symbol, and leaves $A_\tau$ open.
-      Papers Q8~\cite{BeauQ8}, Q10~\cite{Beau2026q10}, and Q11~\cite{Beau2026q11} close this
-      gap by proving $A_z = A_H = A_\tau = 2$, yielding the completed effective co-metric
-      $g^{\mu\nu} = 2\eta^{\mu\nu}$ with no free parameter.
+      $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$, whose principal symbol gives a co-metric of rank three;
+      its rank-four extension (open problem Q5b-O2) and the coefficient values (Q5b-O3) are open.
+      No source fixes the coefficients.
+      Q8~\cite{BeauQ8} shows that a supplied, fully invariant spatial form has $A_H = A_Z = 2\lambda$ with
+      $\lambda > 0$ free, Q10~\cite{Beau2026q10} derives no coefficient value, and Q11~\cite{Beau2026q11} shows that
+      spatial $\mathrm{SU}(2)$ invariance leaves $A_\tau$ independent of $\lambda$.
+      Under the hypotheses of Q11 Corollary~6.1 the co-metric is therefore
+      $\mathrm{diag}(-A_\tau, 2\lambda, 2\lambda, 2\lambda)$ with two independent scales.
 
       The note~\cite{Beau2026n} then studies the O7 saturation observable $\eta_n^{O7} =
   B_n/\Sigma_n^{\mathrm{tot}}$ and asks whether it recovers the relativistic Lorentz factor
@@ -98,8 +109,8 @@ Construction, Uniqueness, and the Lorentz Identification}
         no natural BFS observable directly satisfies the quadratic law
         $B_n^2 + (\Sigma_n^\tau)^2 = 1$.
       \end{enumerate}
-      The note defines $\mathcal{P}_\tau^{\mathrm{Q5b}}$ implicitly via the completed
-      co-metric of Q5b and Q11, but defers its explicit construction as ``the remaining open
+      The note defines $\mathcal{P}_\tau^{\mathrm{Q5b}}$ implicitly via a completed
+      co-metric, but defers its explicit construction as ``the remaining open
       task'' (Section~6.3 of~\cite{Beau2026n}).
 
     \subsection{What the present paper does}
@@ -119,10 +130,12 @@ Construction, Uniqueness, and the Lorentz Identification}
       The derivation rests on three distinct inputs.
       Each is necessary; removing any one leaves the formula undetermined.
       \begin{enumerate}
-        \item[(L)] \textbf{Lorentzian splitting} (from the completed principal symbol):
-        the co-metric $g^{\mu\nu} = 2\eta^{\mu\nu}$ determines a unique timelike direction
-        $\partial_\tau$ in $T(\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R}))$
-        and a corresponding linear projector~$P_\tau$ on vectors.
+        \item[(L)] \textbf{Lorentzian splitting} (from a supplied completed principal symbol):
+        a co-metric of the form~\eqref{eq:metric} determines the timelike direction
+        $\partial_\tau$ in $T(\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R}))$, orthogonal to the spatial
+        directions because its temporal block is decoupled, and a corresponding linear projector~$P_\tau$ on
+        vectors.
+        This uses the signature and the absence of mixed terms, not the values of $A_\tau$ and $\lambda$.
         The principal symbol alone does not determine a scalar map on $\Sigma_n^{\mathrm{tot}}$.
         \item[(BI)] \textbf{Born--Infeld capacity sphere} (from the quadratic admissibility
         budget expressing the capacity bound of~\cite{Beau2026c}): the admissible capacity flow vector $\vec{F}_n$ lies on the
@@ -173,7 +186,7 @@ Construction, Uniqueness, and the Lorentz Identification}
 
     \subsection{Completed co-metric and its inverse}\label{sec:cometric}
 
-      The effective operator on $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$ is
+      Under [H-L] and [H-lift], the effective operator on $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$ is
       (Q5b Theorem~5.2~\cite{Beau2026q5b}):
       \begin{equation}\label{eq:Leff}
         L_{\mathrm{eff}} = -A_\tau\partial_\tau^2 + A_H\Delta_H,
@@ -192,22 +205,34 @@ Construction, Uniqueness, and the Lorentz Identification}
       computing Lorentzian projections); these are related by $g^{\mu\rho}g_{\rho\nu}
   = \delta^\mu_\nu$.
 
-      The following results are in force without further proof:
-      Q8~\cite{BeauQ8} gives $A_z = 2$;
-      Q10~\cite{Beau2026q10} gives $A_H = 2$ under~[U];
-      Q11~\cite{Beau2026q11} gives $A_\tau = 2$ under the Q5a hypotheses and~[U].
-      The completed effective co-metric is therefore
+      This symbol has rank three: the central slot is empty, and a rank-four extension requires a new operator
+      (open problem Q5b-O2), which no source constructs.
+      We take a supplied rank-four co-metric of the form of Q11~\cite{Beau2026q11}, Corollary~6.1,
       \begin{equation}\label{eq:metric}
-        g^{\mu\nu} = 2\eta^{\mu\nu}, \qquad
-        \eta = \mathrm{diag}(-1,+1,+1,+1),
+        g^{\mu\nu} = \mathrm{diag}(-A_\tau,\, 2\lambda,\, 2\lambda,\, 2\lambda),
+        \qquad A_\tau > 0,\ \lambda > 0,
       \end{equation}
-      with no free parameter, and its inverse metric is
+      in an adapted frame.
+      It holds under the hypotheses of that corollary: [H-L] and [H-lift], a supplied full-rank extension satisfying
+      [T] and [INV$^+$] of Q8~\cite{BeauQ8}, and invariance of its principal symbol under the action [ACT$_\tau$]
+      with a negative ordering term.
+      Three statements are then distinct.
+      First, the invariant form has two independent coefficients: Q8 leaves $\lambda$ free, Q10~\cite{Beau2026q10}
+      derives no coefficient value, and Q11 shows that spatial $\mathrm{SU}(2)$ invariance relates $A_\tau$ to
+      $\lambda$ by no equation.
+      Second, the signature $(-,+,+,+)$ and the absence of mixed temporal--spatial terms are conditional on the
+      hypotheses just listed.
+      Third, the rescaling $\tau' = \tau\,(2\lambda/A_\tau)^{1/2}$ turns~\eqref{eq:metric} into
+      $2\lambda\,\eta^{\mu\nu}$ with $\eta = \mathrm{diag}(-1,+1,+1,+1)$, and the further choice $\lambda = 1$ gives
+      the normalisation $g^{\mu\nu} = 2\eta^{\mu\nu}$; this is a choice of units in each sector, not a derived
+      value.
+      The inverse metric is
       \begin{equation}\label{eq:invmetric}
-        g_{\mu\nu} = \tfrac{1}{2}\eta_{\mu\nu}.
+        g_{\mu\nu} = \mathrm{diag}\bigl(-A_\tau^{-1},\, (2\lambda)^{-1},\, (2\lambda)^{-1},\, (2\lambda)^{-1}\bigr),
       \end{equation}
-      The temporal component satisfies $g_{\tau\tau} = -1/2 < 0$.
+      so $g_{\tau\tau} = -1/A_\tau < 0$ and $g_{\tau i} = 0$ for the spatial indices~$i$.
       Formulae for Lorentzian projections in Section~\ref{sec:construction} use
-      $g_{\mu\nu}$~\eqref{eq:invmetric}.
+      $g_{\mu\nu}$~\eqref{eq:invmetric}; none of them depends on the values of $A_\tau$ and $\lambda$.
 
     \subsection{Born--Infeld admissibility budget}
 
@@ -219,15 +244,36 @@ Construction, Uniqueness, and the Lorentz Identification}
       \end{equation}
       After normalisation $c_{\mathrm{BI}} = 1$, the capacity flow vector $\vec{F}_n$
       (Definition~\ref{def:BIsphere} below) lies on the unit Born--Infeld sphere.
-      This budget is a structural axiom of the Foundation~\cite{Beau2026m}; it is not
-      derived from the principal symbol.
+      The quadratic equality is a hypothesis of LorCap~\cite{Beau2026n} expressing the inequality [A-cap] of
+      the companion paper~\cite{Beau2026c}; neither that paper nor Foundation~\cite{Beau2026m} states it, and it is
+      not derived from the principal symbol.
+
+    \subsection{Cone--capacity identification}
+
+      The Born--Infeld budget is normalised by $c_{\mathrm{BI}}$ per depth step, while the co-metric~\eqref{eq:metric}
+      has its own light-cone speed $(2\lambda/A_\tau)^{1/2}$ in the units of $\tau$ and of the spatial coordinates.
+      Reading a normalised capacity load as the velocity parameter of an observer of the co-metric requires one
+      further hypothesis.
+      \begin{itemize}
+        \item[{[H-cone]}] \emph{Cone--capacity identification.}
+        The light-cone speed of the co-metric equals the Born--Infeld bound per ordering step.
+        Equivalently, in the rescaled coordinate $\tau'$ in which~\eqref{eq:metric} is proportional to $\eta$, the
+        normalised load $\beta = dI_{\mathrm{spat}}/(c_{\mathrm{BI}}\,dn)$ is the coordinate velocity $dx/d\tau'$ of
+        the observer it labels, so that $\beta = 1$ lies on the light cone.
+      \end{itemize}
+      [H-cone] supplies the datum coupling the temporal and spatial normalisations that Q11~\cite{Beau2026q11}
+      names as missing (open problem Q11-O1, whose first candidate is a saturation rule for the capacity bound).
+      It is not derived here or in any source.
+      Theorem~\ref{thm:main} does not use it; Corollary~\ref{cor:lorentz} uses it only for its kinematic reading.
 
   \section{Capacity-Flow Bundle and Born--Infeld Sphere}\label{sec:bundle}
 
     \subsection{The capacity flow vector}
 
       In the large-$q$ continuum limit, the cascade depth $n$ is identified with the coordinate
-      $\tau$ on $\mathbb{R}_\tau$ (Q5b Remark~3.3~\cite{Beau2026q5b}, Q11 Lemma~3.1~\cite{Beau2026q11}).
+      $\tau$ on $\mathbb{R}_\tau$ through $\tau = n\,\Delta\tau$ with a free step $\Delta\tau$; this is a modelling
+      identification (Q11 Modelling identification~3.1~\cite{Beau2026q11}), on the product structure that Q5b
+      Remark~3.3~\cite{Beau2026q5b} fixes as a modelling choice.
       The O7 observables become sections of a bundle over $\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R})$.
 
       \begin{definition}[Capacity flow vector and unit BI sphere]\label{def:BIsphere}
@@ -247,13 +293,14 @@ Construction, Uniqueness, and the Lorentz Identification}
     \subsection{Identification of the spatial component}
 
       The O7 observable $B_n$ is the normalised spatial coverage of the BFS cascade.
-      By the Q5b Carnot--Carath\'eodory convergence (Theorem~3.2 of~\cite{Beau2026q5b}),
-      in the large-$q$ limit $B_n$ coincides with the fraction of spatial capacity occupied by
-      the BFS ball, i.e.\ the magnitude of the spatial component of the normalised capacity
-      flow:
+      We identify it with the magnitude of the spatial component of the normalised capacity flow:
       \begin{equation}\label{eq:spatial}
         B_n = |\vec{F}_n^{\,\mathrm{spat}}|.
       \end{equation}
+      This identification, denoted (S), is a hypothesis of the present paper.
+      The Q5b Carnot--Carath\'eodory convergence (Theorem~3.2 of~\cite{Beau2026q5b}) concerns the rescaled BFS
+      shells and motivates reading $B_n$ as a spatial footprint; it supplies no capacity-flow vector and does not
+      imply~\eqref{eq:spatial}.
       Substituting~\eqref{eq:spatial} into the unit BI sphere~\eqref{eq:BIsphere} gives
       \begin{equation}\label{eq:Ftau}
         F_n^\tau = \sqrt{1 - B_n^2}.
@@ -273,7 +320,9 @@ Construction, Uniqueness, and the Lorentz Identification}
         = \frac{g_{\tau\mu}V^\mu}{g_{\tau\tau}}\,\partial_\tau
         = V^\tau\,\partial_\tau,
       \end{equation}
-      using $g_{\tau\tau} = -1/2$ from~\eqref{eq:invmetric} and $g_{\tau\mu}V^\mu = -V^\tau/2$.
+      using $g_{\tau i} = 0$ from~\eqref{eq:invmetric}, so that $g_{\tau\mu}V^\mu = g_{\tau\tau}V^\tau$.
+      The projector does not depend on the values of $A_\tau$ and $\lambda$: it uses only the decoupled temporal
+      block and $g_{\tau\tau} \neq 0$.
       The map $V \mapsto P_\tau V = V^\tau\partial_\tau$ is \emph{linear and idempotent}
       on $T(\mathbb{R}_\tau \times \mathrm{Heis}_3(\mathbb{R}))$.
 
@@ -317,17 +366,12 @@ Construction, Uniqueness, and the Lorentz Identification}
       \begin{remark}[Central direction]\label{rem:central}
         As noted in~\cite{Beau2026n} (Section~5.3), $\mathcal{P}_\tau^{\mathrm{Q5b}}$ does not act
         on the Schr\"odinger representation space $\mathbb{C}^q$.
-        The central direction $\tilde{Z} = \partial_z$ of $\mathrm{Heis}_3(\mathbb{R})$ becomes the
-        temporal direction only after the symbol completion chain
-        \[
-          \begin{aligned}
-            \text{CC structure}
-            &\to \text{Q8 sub-principal correction}\\
-            &\to \text{Q11 closure}
-            \to g^{\mu\nu} = 2\eta^{\mu\nu}.
-          \end{aligned}
-        \]
-        The map $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is defined at the level of the completed
+        The temporal direction is the ordering factor $\mathbb{R}_\tau$, not a direction of
+        $\mathrm{Heis}_3(\mathbb{R})$.
+        The central direction $\tilde{Z}$ is spatial: its coefficient is the empty central slot of the rank-three
+        co-metric (open problem Q5b-O2), and Q8~\cite{BeauQ8} shows that neither the commutator $[X,Y]=Z$ nor any
+        lower-order term supplies it.
+        The map $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is defined at the level of a supplied completed
         geometry on $\mathbb{R}_\tau\times\mathrm{Heis}_3(\mathbb{R})$, not at the level of
         the Weil representation.
       \end{remark}
@@ -335,10 +379,9 @@ Construction, Uniqueness, and the Lorentz Identification}
     \subsection{Main theorem: explicit formula and uniqueness}
 
       \begin{theorem}[BI-lifted temporal residual map]\label{thm:main}
-        Assume the Q5a continuum hypotheses~\cite{Beau2026q5a}
-        \textup{[H1]}, \textup{[H-w]}, \textup{[H-E1]}, \textup{[C]},
-        the spectral universality hypothesis~\textup{[U]} proved in U1~\cite{Beau2026u1},
-        and the canonical BI capacity-flow lift of Definition~\ref{def:BIsphere}.
+        Assume a supplied co-metric of the form~\eqref{eq:metric}, under the hypotheses of Q11 Corollary~6.1
+        listed in Section~\ref{sec:cometric}, the identification \textup{(S)} of~\eqref{eq:spatial},
+        and the BI capacity-flow lift of Definition~\ref{def:BIsphere}.
         The temporal residual map $\mathcal{P}_\tau^{\mathrm{Q5b}}$ acts on the O7 total
         residual~$\Sigma_n^{\mathrm{tot}} \in [0,1]$ by
         \begin{equation}\label{eq:Ptau-scalar}
@@ -416,7 +459,8 @@ Construction, Uniqueness, and the Lorentz Identification}
       \end{proposition}
 
       \begin{proof}
-        Direct: each condition is used exactly once in the proof of Theorem~\ref{thm:main}.
+        Direct: (L) enters through Definition~\ref{def:Ptau}, and (BI) and (W) are each used once in the
+        proof of Theorem~\ref{thm:main}.
         Without (L), the map $V \mapsto P_\tau V$ is undefined, so Definition~\ref{def:Ptau}
         has no content.
         Without (BI), equation~\eqref{eq:BIsphere} does not hold, and $|F_n^\tau|$ cannot be
@@ -485,8 +529,9 @@ Construction, Uniqueness, and the Lorentz Identification}
         \eta_n^\tau := \frac{B_n}{\mathcal{P}_\tau^{\mathrm{Q5b}}\,\Sigma_n^{\mathrm{tot}}}
         = \frac{B_n}{\sqrt{1-B_n^2}} = \beta\gamma,
       \]
-      where $\beta := B_n$ is the normalised spatial mobility and $\gamma = (1-\beta^2)^{-1/2}$
-      is the Lorentz factor.
+      where $\beta := B_n$ is the normalised spatial mobility and $\gamma = (1-\beta^2)^{-1/2}$.
+      Under \textup{[H-cone]}, $\beta$ is the velocity of the observer in units of the light-cone speed of the
+      co-metric, and $\gamma$ is its Lorentz factor.
       Consequently,
       \[
         \Phi(\eta_n^\tau) := \bigl(1 + (\eta_n^\tau)^2\bigr)^{-1/2} = \frac{1}{\gamma}.
@@ -499,9 +544,10 @@ Construction, Uniqueness, and the Lorentz Identification}
     \end{proof}
 
     \begin{remark}[Physical content]\label{rem:physics}
-      Corollary~\ref{cor:lorentz} gives:
+      The formula of Corollary~\ref{cor:lorentz} holds under the hypotheses of Theorem~\ref{thm:main}.
+      Its kinematic reading requires \textup{[H-cone]} in addition, and then gives:
       (i) \emph{time dilation}: $d\tau/dn = 1/\gamma$;
-      (ii) \emph{light cone}: $B_n = 1$ forces $F_n^\tau = 0$, i.e.\ no temporal residual at $v = c$.
+      (ii) \emph{light cone}: $B_n = 1$ forces $F_n^\tau = 0$, i.e.\ no temporal residual on the light cone.
       Length contraction and the reconstruction of effective Lorentz transformations between
       inertial observers are addressed in~\cite{Beau2026lco1}.
     \end{remark}
@@ -515,52 +561,65 @@ Construction, Uniqueness, and the Lorentz Identification}
       \smallskip
       \begin{center}
         \renewcommand{\arraystretch}{1.2}
-        \begin{tabular}{lll}
+        \begin{tabular}{p{3.4cm}p{5.2cm}p{5.4cm}}
           \hline
           Label & Content & Status \\
           \hline
           \cite{Beau2026n} Cor.~1 & $\Sigma_n^{\mathrm{tot}} = 1-B_n$ exact &
           Proved (Weil factorization) \\
-          Q5b Thm.~5.2~\cite{Beau2026q5b} & $L_{\mathrm{eff}}$ and principal symbol &
-          Proved (Q9~\cite{Beau2026q9} + Q5a) \\
-          Q8~\cite{BeauQ8} & $A_z = 2$ &
-          Proved (Casimir rigidity) \\
-          Q10~\cite{Beau2026q10} & $A_H = 2$ &
-          Proved (conditional on [U]) \\
-          Q11~\cite{Beau2026q11} & $A_\tau = 2$, $g^{\mu\nu} = 2\eta^{\mu\nu}$ &
-          Proved (conditional on [U]) \\
-          BI budget~\eqref{eq:BI}~\cite{Beau2026c} & Unit BI sphere &
-          Structural (Foundation~\cite{Beau2026m}) \\
+          Q5b Thm.~5.2~\cite{Beau2026q5b} & $L_{\mathrm{eff}}$, rank-three co-metric &
+          Conditional on [H-L] (unestablished) and [H-lift] (open) \\
+          Q5b-O2 & Rank-four extension & Open; supplied here \\
+          Q8~\cite{BeauQ8} & $A_H = A_Z = 2\lambda$, $\lambda$ free &
+          Proved for a supplied invariant form ([T], [INV$^+$]); no value of $A_Z$ \\
+          Q10~\cite{Beau2026q10} & No coefficient value &
+          Ratio bound conditional on [U] and unsupplied inputs \\
+          Q11~\cite{Beau2026q11} Cor.~6.1 & Form~\eqref{eq:metric}, $A_\tau$ and $\lambda$ independent &
+          Conditional \\
+          $g^{\mu\nu} = 2\eta^{\mu\nu}$ & Normalisation after rescaling $\tau$ &
+          Choice of units; not used \\
+          BI budget~\eqref{eq:BI} & Unit BI sphere &
+          Hypothesis of~\cite{Beau2026n} expressing [A-cap] of~\cite{Beau2026c} \\
+          (S), \eqref{eq:spatial} & $B_n = |\vec{F}_n^{\,\mathrm{spat}}|$ &
+          Identification (this paper) \\
           Definition~\ref{def:BIsphere} & Capacity flow vector $\vec{F}_n$ &
           Structural (this paper) \\
           Theorem~\ref{thm:main} & Formula and uniqueness &
-          Proved (conditional on [U] + BI lift) \\
+          Proved under a supplied co-metric~\eqref{eq:metric}, (S) and the BI lift \\
           Corollary~\ref{cor:lorentz} & $\Phi(\eta_n^\tau) = 1/\gamma$ &
-          Proved (conditional on [U] + BI lift) \\
+          Formula proved under the same hypotheses; kinematic reading conditional on [H-cone] \\
+          [H-cone] & Cone speed $=$ BI bound per ordering step &
+          Hypothesis; the coupling datum Q11-O1 leaves open \\
           \hline
         \end{tabular}
       \end{center}
 
       \medskip
-      The sole analytic conditional is hypothesis~[U], proved in U1~\cite{Beau2026u1} under
-      the Q5a hypotheses.
-      The BI lift (Definition~\ref{def:BIsphere}) is structural: it uses the BI budget
-      axiom~\cite{Beau2026c,Beau2026m} and the Q5b spatial identification.
+      The analytic content is conditional on a supplied rank-four co-metric of the form~\eqref{eq:metric}, which in
+      turn rests on the hypotheses of Q11 Corollary~6.1, and on the identification (S).
+      No coefficient value enters: the projector $P_\tau$ uses only the signature and the decoupled temporal block.
+      The spectral universality hypothesis [U] enters no step of the proof; it is open, U1~\cite{Beau2026u1}
+      recording that no proof of it is available.
+      The BI lift (Definition~\ref{def:BIsphere}) uses the quadratic budget hypothesis~\eqref{eq:BI} and the
+      identification (S).
+      The kinematic reading of Corollary~\ref{cor:lorentz} uses [H-cone] in addition.
 
-    \subsection{Closures of LC-O1--O3}
+    \subsection{Status of LC-O1--O3}
 
       \paragraph{LC-O1 (Length contraction).}
         Effective Lorentz transformations between inertial observers are reconstructed
         in~\cite{Beau2026lco1}.
         The Born--Infeld capacity sphere supplies the load $\beta$ and the residual
-        $F^\tau = 1/\gamma$, while the Q5b--Q11 metric closure supplies the Lorentzian
-        interval whose isometries are the Lorentz group.
+        $F^\tau = 1/\gamma$, a supplied co-metric of the form~\eqref{eq:metric}, rescaled in $\tau$, supplies the
+        Lorentzian interval whose isometries are the Lorentz group, and [H-cone] identifies the load with the
+        velocity of the boost.
         Length contraction follows as the reciprocal spatial projection onto the
         simultaneity hyperplane of the moving splitting.
 
       \paragraph{LC-O2-O1 (Capacity--metric bridge).}
         LCII~\cite{Beau2026lco2} postulates the equivalence of the capacity definition
-        $R(x)^2 = 1-\epsilon(x)$ and the metric definition $R(x)^2 = -2g_{\tau\tau}(x)$.
+        $R(x)^2 = 1-\epsilon(x)$ and the metric definition $R(x)^2 = g_{\tau\tau}(x)/g_{\tau\tau}^\infty$, whose
+        flat-space reference value is postulated.
         LC-O2-O1~\cite{Beau2026lco2o1} proves that the scalar free-fraction reduction does
         not establish this equivalence, so the bridge remains open.
 
@@ -582,8 +641,10 @@ Construction, Uniqueness, and the Lorentz Identification}
 
     The completed principal symbol, Born--Infeld lift, and Weil filling law determine the
     temporal residual map uniquely under the stated hypotheses.
-    The result gives $F_n^\tau=\sqrt{1-B_n^2}$ and hence the standard time-dilation factor
+    The result gives $F_n^\tau=\sqrt{1-B_n^2}$, which under [H-cone] is the standard time-dilation factor
     $1/\gamma$.
+    The splitting uses a supplied co-metric of the conditional form of Q11 with two independent coefficients; no
+    coefficient value is used, and the normalisation $g^{\mu\nu} = 2\eta^{\mu\nu}$ is a choice of units.
     It does not close the non-homogeneous capacity--metric bridge, for which the scalar
     free-fraction construction has a proved no-go.
 
