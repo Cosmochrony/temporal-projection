@@ -59,7 +59,7 @@ LorCap → TempProj → LCII
 ```
 
 TempProj constructs the temporal residual map left open by LorCap. LCII (`Beau2026lco2`) extends the result
-to non-homogeneous regimes (gravitational time dilation).
+to non-homogeneous regimes (gravitational time dilation, under the declared postulate of LCII Remark 3.2).
 
 ## Dependencies
 

@@ -66,7 +66,8 @@ Construction, Uniqueness, and the Lorentz Identification}
     here.
     \textbf{Interpretive reading.}
     The Lorentz factor is thereby read as the reciprocal temporal residual of a bounded
-    capacity-flow split, conditional on the Born--Infeld lift.
+    capacity-flow split, conditional on the supplied co-metric, the identification of $B_n$, the Born--Infeld lift
+    and, for its kinematic reading, [H-cone].
   \end{abstract}
 
   \noindent\textbf{Keywords.}
@@ -123,7 +124,7 @@ Construction, Uniqueness, and the Lorentz Identification}
 
       As a by-product, the uniqueness proof explains why all three candidate maps
       $\Sigma_n^A$, $\Sigma_n^B$, $\Sigma_n^C$ tested numerically in~\cite{Beau2026n} fail:
-      each violates exactly one of the three necessary inputs (Proposition~\ref{prop:failure}).
+      each violates one of the three necessary inputs (Proposition~\ref{prop:failure}).
 
     \subsection{Precise scope of each ingredient}\label{sec:scope}
 
@@ -138,8 +139,8 @@ Construction, Uniqueness, and the Lorentz Identification}
         This uses the signature and the absence of mixed terms, not the values of $A_\tau$ and $\lambda$.
         The principal symbol alone does not determine a scalar map on $\Sigma_n^{\mathrm{tot}}$.
         \item[(BI)] \textbf{Born--Infeld capacity sphere} (from the quadratic admissibility
-        budget expressing the capacity bound of~\cite{Beau2026c}): the admissible capacity flow vector $\vec{F}_n$ lies on the
-        unit sphere $(F_n^\tau)^2 + |\vec{F}_n^{\,\mathrm{spat}}|^2 = 1$ (after normalisation).
+        budget expressing the capacity bound of~\cite{Beau2026c}): the admissible capacity flow vector
+        $\vec{F}_n$ lies on the unit sphere $(F_n^\tau)^2 + |\vec{F}_n^{\,\mathrm{spat}}|^2 = 1$ (after normalisation).
         This is the quadratic constraint that forces $F_n^\tau = \sqrt{1 - B_n^2}$ once $B_n$
         is known.
         \item[(W)] \textbf{Weil filling law} (from the Schr\"odinger factorization~\cite{Beau2026n}):
@@ -262,7 +263,8 @@ Construction, Uniqueness, and the Lorentz Identification}
         the observer it labels, so that $\beta = 1$ lies on the light cone.
       \end{itemize}
       [H-cone] supplies the datum coupling the temporal and spatial normalisations that Q11~\cite{Beau2026q11}
-      names as missing (open problem Q11-O1, whose first candidate is a saturation rule for the capacity bound).
+      names as missing (open problem Q11-O1; Q11 lists a saturation rule for the capacity bound among the candidate
+      sources).
       It is not derived here or in any source.
       Theorem~\ref{thm:main} does not use it; Corollary~\ref{cor:lorentz} uses it only for its kinematic reading.
 
@@ -398,8 +400,8 @@ Construction, Uniqueness, and the Lorentz Identification}
         Moreover, $\mathcal{P}_\tau^{\mathrm{Q5b}}$ is the \emph{unique} map
         $\psi\colon[0,1]\to[0,1]$ satisfying simultaneously:
         \begin{itemize}
-          \item[\textup{(L)}] $\psi(\Sigma_n^{\mathrm{tot}}) = |P_\tau \vec{F}_n|$ (Lorentzian
-          projection of the capacity flow);
+          \item[\textup{(L)}] $\psi(\Sigma_n^{\mathrm{tot}}) = |F_n^\tau|$, the $\partial_\tau$-coordinate component
+          of $P_\tau \vec{F}_n$ (Lorentzian projection of the capacity flow);
           \item[\textup{(BI)}] $B_n^2 + \psi(\Sigma_n^{\mathrm{tot}})^2 = 1$
           (unit BI sphere~\eqref{eq:BIsphere});
           \item[\textup{(W)}] $\Sigma_n^{\mathrm{tot}} = 1 - B_n$ (Weil filling law~\eqref{eq:Sigma}).
@@ -479,7 +481,7 @@ Construction, Uniqueness, and the Lorentz Identification}
 
       \begin{proposition}[Failure modes]\label{prop:failure}
         The three candidate maps of~\cite{Beau2026n} fail the quadratic law because each
-        violates exactly one of conditions~\textup{(L)}, \textup{(BI)}, \textup{(W)}.
+        violates one of conditions~\textup{(L)}, \textup{(BI)}, \textup{(W)}.
         \begin{enumerate}
           \item $\Sigma_n^A = 1 - |{c : \exists(a,b),\,(a,b,c)\in\bigcup_{k\leq n} S_k}|/q$
           (central-coordinate coverage): fails \textup{(W)}.
@@ -546,7 +548,8 @@ Construction, Uniqueness, and the Lorentz Identification}
     \begin{remark}[Physical content]\label{rem:physics}
       The formula of Corollary~\ref{cor:lorentz} holds under the hypotheses of Theorem~\ref{thm:main}.
       Its kinematic reading requires \textup{[H-cone]} in addition, and then gives:
-      (i) \emph{time dilation}: $d\tau/dn = 1/\gamma$;
+      (i) \emph{time dilation}: the proper time $\tau_u$ of an observer at load $\beta$ advances at the rate
+      $d\tau_u/d\tau' = F_n^\tau = 1/\gamma$ relative to the rescaled ordering coordinate $\tau'$;
       (ii) \emph{light cone}: $B_n = 1$ forces $F_n^\tau = 0$, i.e.\ no temporal residual on the light cone.
       Length contraction and the reconstruction of effective Lorentz transformations between
       inertial observers are addressed in~\cite{Beau2026lco1}.
@@ -649,7 +652,7 @@ Construction, Uniqueness, and the Lorentz Identification}
     free-fraction construction has a proved no-go.
 
     \paragraph{Interpretive outlook.}
-    The result supports viewing relativistic clock-rate reduction as residual capacity after
+    Under [H-cone], the result supports viewing relativistic clock-rate reduction as residual capacity after
     spatial mobility has been accounted for.
     This is a structural reading of the proved map, not an independent dynamical law.
 
