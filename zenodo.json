@@ -3,5 +3,6 @@
   "web_url": "https://cosmochrony.org/science/lc/temporal-projection/",
   "main_tex": "tex/temporal-projection.tex",
   "zenodo_id": 20316526,
-  "doi": "10.5281/zenodo.20316526"
+  "doi": "10.5281/zenodo.20316526",
+  "notes": "Version 1.5 separates three statements. Scalar uniqueness: the quadratic Born-Infeld law and the Weil filling law alone force the values of any non-negative map at the attained values of the total residual, the R+1 points with n <= R = (q-1)/2, and only there; the temporal splitting (L) is not necessary for it. Identification: (L) identifies the value so fixed as the partial_tau-component of the capacity flow without selecting it; the projector uses the decoupled temporal block, neither the coefficient values nor the signature. Lorentzian kinematic reading: it uses the signature and [H-cone]. The candidate maps of LorentzCapacity all fail the quadratic law (the depth proxy violates the identification (S)); the bound on B_n is B_R = 1/2 + 1/(2q^2); the light cone B = 1 lies outside the window n <= R and is reached by the torus load of LC-O3; the account of the 7% deviation of the depth proxy is withdrawn as unverifiable. Theorem, remark and proposition numbers are unchanged."
 }
