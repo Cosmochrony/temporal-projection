@@ -59,7 +59,8 @@ central coverage is not a function of $B_n$.
 - Scalar uniqueness on the attained values from (BI) and (W): **proved**; it uses neither (L) nor the co-metric
 - Identification of the value as the temporal component: under (L), (S) and the Born-Infeld lift; the
   signature is not used
-- Necessity: the quadratic law and (W) are necessary for the uniqueness, (L) is not (**proved**)
+- Necessity: the quadratic law is necessary for the uniqueness and (W) for its closed form $\sqrt{f(2-f)}$;
+  (L) is not necessary (**proved**)
 - Lorentz factor corollary: formula **proved** under the same hypotheses; kinematic reading conditional on
   [H-cone] and the Lorentzian signature
 - Failure modes of the LorentzCapacity candidates: all fail (BI) (**proved** for the square-root complement and

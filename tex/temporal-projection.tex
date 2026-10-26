@@ -41,7 +41,7 @@ Construction, Uniqueness, and the Lorentz Identification}
     the Born--Infeld capacity bound), and
     the exact Weil linear filling law $\Sigma_n^{\mathrm{tot}} = 1 - B_n$
     established in LorCap, with $B_n$ identified with the spatial capacity flow by a hypothesis of the paper.
-    The splitting uses only the absence of mixed temporal--spatial terms; neither a coefficient value nor the
+    The splitting uses only the absence of mixed temporal--spatial terms and a non-zero temporal coefficient; neither a coefficient value nor the
     signature enters the construction, and the normalisation $g^{\mu\nu} = 2\eta^{\mu\nu}$ is a choice of units.
     The resulting scalar temporal residual map is
     \[
@@ -55,7 +55,7 @@ Construction, Uniqueness, and the Lorentz Identification}
     Three statements are distinct.
     First, scalar uniqueness: the quadratic law and the Weil filling law alone force the values of any
     non-negative map at the values of $\Sigma_n^{\mathrm{tot}}$ actually attained, a finite set of points in
-    $[1/2, 1)$ for depths below half the torus; off that set the map is not constrained.
+    $[1/2 - 1/(2q^2),\, 1 - 1/q^2]$ for depths below half the torus; off that set the map is not constrained.
     Second, the splitting identifies that value as the temporal component of the capacity flow; it does not
     select the formula, and the uniqueness does not use it.
     Third, the Lorentzian kinematic reading uses the signature of the co-metric and a further hypothesis,
@@ -215,7 +215,7 @@ Construction, Uniqueness, and the Lorentz Identification}
   tensor} $g^{\mu\nu}$ is read off from the principal symbol by $\sigma_2(L_{\mathrm{eff}})(p,k)
   = g^{\mu\nu}(p)k_\mu k_\nu$.
       We denote by $g_{\mu\nu}$ its inverse metric tensor (used for lowering indices and
-      computing Lorentzian projections); these are related by $g^{\mu\rho}g_{\rho\nu}
+      computing the temporal projection); these are related by $g^{\mu\rho}g_{\rho\nu}
   = \delta^\mu_\nu$.
 
       This symbol has rank three: the central slot is empty, and a rank-four extension requires a new operator
@@ -244,7 +244,7 @@ Construction, Uniqueness, and the Lorentz Identification}
         g_{\mu\nu} = \mathrm{diag}\bigl(-A_\tau^{-1},\, (2\lambda)^{-1},\, (2\lambda)^{-1},\, (2\lambda)^{-1}\bigr),
       \end{equation}
       so $g_{\tau\tau} = -1/A_\tau < 0$ and $g_{\tau i} = 0$ for the spatial indices~$i$.
-      Formulae for Lorentzian projections in Section~\ref{sec:construction} use
+      Formulae for the temporal projection in Section~\ref{sec:construction} use
       $g_{\mu\nu}$~\eqref{eq:invmetric}; none of them depends on the values of $A_\tau$ and $\lambda$.
 
     \subsection{Born--Infeld admissibility budget}
@@ -373,7 +373,8 @@ Construction, Uniqueness, and the Lorentz Identification}
       \end{definition}
 
       \begin{remark}[Non-idempotence]\label{rem:nonidempotent}
-        The map $\mathcal{P}_\tau^{\mathrm{Q5b}}\colon[0,1]\to[0,1]$ is \emph{not} idempotent:
+        The map $\mathcal{P}_\tau^{\mathrm{Q5b}}$, extended by the formula~\eqref{eq:Ptau-scalar} to $[0,1]$, is
+        \emph{not} idempotent:
         $(\mathcal{P}_\tau^{\mathrm{Q5b}})^2 \neq \mathcal{P}_\tau^{\mathrm{Q5b}}$ in general.
         It is not an algebraic projection on a space of scalar observables.
         The name ``temporal residual map'' is preferred over ``projector'' for
@@ -471,9 +472,9 @@ Construction, Uniqueness, and the Lorentz Identification}
 
       \begin{remark}[Derivation chain]\label{rem:chain}
         The three conditions play different roles.
-        The quadratic law (BI), with the identity (W) converting $B_n$ into a function of the observable, fixes the
-        scalar values: these two are necessary and sufficient for the uniqueness of Theorem~\ref{thm:main}(ii)
-        (Proposition~\ref{prop:necessity}).
+        The quadratic law (BI) fixes the scalar values and is necessary for their uniqueness; with the identity (W),
+        which converts $B_n$ into a function of the observable, it is sufficient, and (W) gives the values the closed
+        form $\sqrt{f(2-f)}$ of the point $f \in S_q$ (Proposition~\ref{prop:necessity}).
         The temporal splitting (L) specifies \emph{which} component of $\vec{F}_n$ is temporal: the
         $\partial_\tau$-component of $P_\tau\vec{F}_n$, with $\partial_\tau$ $g$-orthogonal to the spatial directions.
         It identifies the value fixed by (BI) and (W) as the temporal residual of the capacity flow; it does not
@@ -492,8 +493,9 @@ Construction, Uniqueness, and the Lorentz Identification}
         \begin{itemize}
           \item the quadratic law is necessary: without it, in the form \textup{(BI)} or in the form of the unit
           sphere~\eqref{eq:BIsphere} entering through \textup{(S)}, the values of $\psi$ on $S_q$ are not fixed;
-          \item an identity expressing $B_n$ through $\Sigma_n^{\mathrm{tot}}$, here \textup{(W)}, is necessary:
-          without it, \textup{(BI)} fixes $\psi$ as a function of $B_n$, not of the observable;
+          \item \textup{(W)} is not needed for the uniqueness of the values $\psi(\Sigma_n^{\mathrm{tot}})$, which
+          \textup{(BI)} fixes as $\sqrt{1-B_n^2}$ at each depth; it is needed for their closed form
+          $\sqrt{f(2-f)}$ as a function of the point $f \in S_q$;
           \item \textup{(L)} is not necessary: \textup{(BI)} and \textup{(W)} alone fix $\psi$ on $S_q$.
           What \textup{(L)} contributes is the identification of Theorem~\ref{thm:main}\textup{(iii)}.
         \end{itemize}
@@ -506,10 +508,11 @@ Construction, Uniqueness, and the Lorentz Identification}
         With $F_n^\tau := \psi(\Sigma_n^{\mathrm{tot}})$ and $|\vec{F}_n^{\,\mathrm{spat}}| := B_n$ it satisfies (L) and
         (S), and $(F_n^\tau)^2 + |\vec{F}_n^{\,\mathrm{spat}}|^2 = 1 - B_n + B_n^2 \neq 1$ for $0 < B_n < 1$, so only the
         quadratic law excludes it.
-        Identity (W): if the depth-$n$ value $B_n$ is not expressed through $\Sigma_n^{\mathrm{tot}}$, (BI) gives
-        $\psi(\Sigma_n^{\mathrm{tot}}) = \sqrt{1-B_n^2}$ for whatever $B_n$ is paired with $\Sigma_n^{\mathrm{tot}}$, and the
-        value at a point of $S_q$ is not determined by that point.
-        (W) is a proved identity~\cite{Beau2026n}, so this input is available.
+        Identity (W): at each depth, (BI) alone gives $\psi(\Sigma_n^{\mathrm{tot}}) = \sqrt{1-B_n^2}$, so the values are
+        unique without (W).
+        The closed form needs (W): if instead $\Sigma_n^{\mathrm{tot}} = g(B_n)$ for another decreasing function $g$,
+        (BI) gives $\psi(f) = \sqrt{1 - g^{-1}(f)^2}$, which differs from $\sqrt{f(2-f)}$.
+        (W) is a proved identity~\cite{Beau2026n}, so the closed form holds.
         (L): the proof of Theorem~\ref{thm:main}(ii) does not use it; the projector~\eqref{eq:Ptau-vector} uses only
         $g_{\tau i} = 0$ and $g_{\tau\tau} \neq 0$, and the same values follow for either sign of $g_{\tau\tau}$.
       \end{proof}
@@ -591,7 +594,7 @@ Construction, Uniqueness, and the Lorentz Identification}
       residual on the light cone.
       Within the domain of Theorem~\ref{thm:main} the load satisfies $B_n \le B_R = 1/2 + 1/(2q^2)$, so this value
       is not attained by~\eqref{eq:Bn}; it is reached by the exact torus load at depth $n = q-1$, for which the
-      quadratic identity is established in~\cite{Beau2026lco3}.
+      quadratic identity holds by the definition of $F^\tau_n$~\cite{Beau2026lco3}.
       Length contraction and the reconstruction of effective Lorentz transformations between
       inertial observers are addressed in~\cite{Beau2026lco1}.
     \end{remark}
@@ -634,7 +637,8 @@ Construction, Uniqueness, and the Lorentz Identification}
           Proved; uses neither (L) nor the co-metric \\
           Theorem~\ref{thm:main}(iii) & Value $=$ $\partial_\tau$-component of $P_\tau\vec{F}_n$ &
           Identification under (L), (S) and the BI lift; signature not used \\
-          Proposition~\ref{prop:necessity} & Quadratic law and (W) necessary; (L) not &
+          Proposition~\ref{prop:necessity} & Quadratic law necessary for the uniqueness, (W) for the closed form;
+          (L) not &
           Proved \\
           Corollary~\ref{cor:lorentz} & $\Phi(\eta_n^\tau) = 1/\gamma$ &
           Formula proved under the same hypotheses; kinematic reading conditional on [H-cone] and the signature \\
